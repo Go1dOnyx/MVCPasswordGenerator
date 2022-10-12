@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "fRCZ4PoVnYzmr/TPxuESm51P33rR+yXfeEBgFEp5QPwYm0cVins5AHHo9YT78NQlYb3dAV8hAxcs2XzPj8T68g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\MVCPassGenerator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Unkno\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\Unkno\\.nuget\\packages\\textcopy\\6.1.0\\textcopy.6.1.0.nupkg.sha512",
+    "C:\\Users\\Unkno\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.5\\microsoft.netcore.app.host.win-x64.6.0.5.nupkg.sha512",
+    "C:\\Users\\Unkno\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.5\\microsoft.aspnetcore.app.ref.6.0.5.nupkg.sha512",
+    "C:\\Users\\Unkno\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.5\\microsoft.windowsdesktop.app.ref.6.0.5.nupkg.sha512",
+    "C:\\Users\\Unkno\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.5\\microsoft.netcore.app.ref.6.0.5.nupkg.sha512"
+  ],
+  "logs": []
+}

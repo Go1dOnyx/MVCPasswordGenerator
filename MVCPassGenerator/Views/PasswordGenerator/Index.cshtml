@@ -1,0 +1,69 @@
+﻿@model PasswordGenerator
+@{
+    ViewData["Title"] = "Password Generator";
+}
+<style>
+    .passBox {
+        border: 1px solid gray;
+        border-radius: 2px;
+        width: 11rem;
+        text-decoration: none;
+        color: inherit;
+    }
+    .passBox:hover{
+        color:black;
+    }
+</style>
+
+<div class="align-self-lg-center">
+    <h4 class="align-self-lg-center">Password Generator</h4>
+</div><br />
+<form method="post" >
+    <div class="form-group">
+        <label for="length" class="control-label">Number of Characters: </label>
+        <input type="number" id="length" require name="passwordLength" class="form-control"/><br />
+
+        <!---This is CheckBox List-->
+        @Html.CheckBoxFor(x => x.HasInteger)
+        <label>0-9   </label>
+
+        @Html.CheckBoxFor(x => x.HasCaptial)
+        <label>A-Z   </label>
+
+        @Html.CheckBoxFor(x => x.HasLowerCase)
+        <label>a-z   </label>
+
+        @Html.CheckBoxFor(x => x.HasSymbols)
+        @Html.EditorFor(x => x.SymbolList)
+        <label>Symbols</label>
+
+        @if(Model.HasSymbols == true && Model.SymbolList == null){
+            <script type="text/javascript">
+                alert("There is no Symbols or uncheck the symbol box");
+            </script>
+        }
+        @if(Model.LengthToLong == true){
+            <script type="text/javascript">
+                alert("The length is too long");
+            </script>
+        }
+        @if(Model.HasBoxesEmpty == true){
+            <script type="text/javascript">
+                alert("Select at least one box");
+            </script>
+        }
+        <!------------------------------------------------->
+
+            <!--This is the Submit Button-->
+            <div class="form-group">
+                <br /><button type="submit" class="btn btn-primary">GENERATE</button>
+                <button type="button" class="btn btn-secondary" asp-controller="PasswordGenerator" asp-action="CopyText" asp-route-id="@Model.PasswordResult">COPY</button>
+            </div>
+            <!------------------------------>
+        <div class="text-center">
+            <label for="" class="control-label">Password Generated:</label>
+            <a class="passBox">@Model.PasswordResult</a>
+        </div>
+    </div>
+</form>
+    
