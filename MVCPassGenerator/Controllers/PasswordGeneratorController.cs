@@ -10,17 +10,11 @@ namespace MVCPassGenerator.Controllers
     {
         public IActionResult Index(PasswordGenerator passLength)
         {
-            if (passLength.PasswordLength > 0)
-            {
-                //Checks if the checkboxes are not selected
-                if (passLength.HasInteger == false && passLength.HasCaptial == false && passLength.HasLowerCase == false && passLength.HasSymbols == false)
-                {
-                    passLength.HasBoxesEmpty = true;
-                    passLength.ValidPass = " ";
-                }
-            }
-            //
+            ViewBag.PasswordIsValid = false;
+
+            //Validation
             if (passLength.PasswordLength <= 180) {
+
                 passLength.LengthToLong = false;
                 passLength.HasBoxesEmpty = false;
 
@@ -33,33 +27,65 @@ namespace MVCPassGenerator.Controllers
                 if (passLength.HasSymbols)
                     passLength.ValidPass += passLength.SymbolList;
                 if (passLength.HasSymbols && passLength.SymbolList == null)
-                {
                     passLength.ValidPass = " ";
-                }
             }
             else
             {
-                //Checks if the length is too long
+                //Else if the length is too long
                 passLength.ValidPass = " ";
                 passLength.LengthToLong = true;
             }
-           
-            string validChar = passLength.ValidPass;
+
+            if (passLength.PasswordLength > 0)
+            {
+                //Checks if the checkboxes are not selected
+                if (passLength.HasInteger == false && passLength.HasCaptial == false && passLength.HasLowerCase == false && passLength.HasSymbols == false)
+                {
+                    passLength.HasBoxesEmpty = true;
+                    passLength.ValidPass = " ";
+                }
+            }
+            //------------------------------------------
+
+            string validChar = passLength.ValidPass; 
             StringBuilder pass = new StringBuilder();
             Random randNum = new Random();
             while (0 < passLength.PasswordLength--)
              {
-                    pass.Append(validChar[randNum.Next(validChar.Length)]); 
+                pass.Append(validChar[randNum.Next(validChar.Length)]); //Creates random chars and adds to string builder object
              }
    
             passLength.PasswordResult = pass.ToString();
+            if (passLength.PasswordResult.Length >= 8 && passLength.PasswordResult.Any(char.IsDigit))
+            {
+                if (passLength.PasswordResult.Any(char.IsUpper) && passLength.PasswordResult.Any(char.IsLower) && passLength.PasswordResult.Any(char.IsSymbol)) {
+                    ViewBag.PasswordIsValid = true;
+                }
+            }
             return View(passLength);
         }
-        public void CopyText(PasswordGenerator passwordCopy) {
-            //Copies result to clipboard
-           TextCopy.ClipboardService.SetText(passwordCopy.PasswordResult);
-            
+
+
+
+        [HttpPost]
+        public IActionResult resetForm(PasswordGenerator passReset) {
+            ModelState.Clear();
+            PasswordGenerator newResetForm = new PasswordGenerator()
+            {
+                PasswordLength = 0,
+                SymbolList = string.Empty,
+                PasswordResult = string.Empty,
+                ValidPass = string.Empty,
+                HasInteger = false,
+                HasCaptial = false,
+                HasBoxesEmpty = false,
+                HasLowerCase = false,
+                HasSymbols = false,
+                LengthToLong = false,
+
+        };
+            return View("Index", newResetForm);
         }
-       
+
     }
 }

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "a8Eg6mqrEs/dm0WJYSbRGXVNMDlcNAHUQnjy/Gu9hjQ=",
+  "Hash": "wF8vpB4/x7urBDTctfv5XXfFzRfxcHjPDUEjMOJxre8=",
   "Source": "MVCPassGenerator",
   "BasePath": "_content/MVCPassGenerator",
   "Mode": "Default",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\MVCPassGenerator.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\css\\password.css",
+      "SourceId": "MVCPassGenerator",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\",
+      "BasePath": "_content/MVCPassGenerator",
+      "RelativePath": "css/password.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\password.css"
     },
     {
       "Identity": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\css\\site.css",
@@ -1069,6 +1086,57 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\Pictures\\greenshield.jpg",
+      "SourceId": "MVCPassGenerator",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\",
+      "BasePath": "_content/MVCPassGenerator",
+      "RelativePath": "Pictures/greenshield.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pictures\\greenshield.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\Pictures\\greenshield2.png",
+      "SourceId": "MVCPassGenerator",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\",
+      "BasePath": "_content/MVCPassGenerator",
+      "RelativePath": "Pictures/greenshield2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pictures\\greenshield2.png"
+    },
+    {
+      "Identity": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\Pictures\\redshield.png",
+      "SourceId": "MVCPassGenerator",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\",
+      "BasePath": "_content/MVCPassGenerator",
+      "RelativePath": "Pictures/redshield.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Pictures\\redshield.png"
     }
   ]
 }

@@ -1,69 +1,92 @@
-﻿@model PasswordGenerator
+﻿<link rel="stylesheet" href="~/css/password.css" />
+@model PasswordGenerator
 @{
     ViewData["Title"] = "Password Generator";
 }
-<style>
-    .passBox {
-        border: 1px solid gray;
-        border-radius: 2px;
-        width: 11rem;
-        text-decoration: none;
-        color: inherit;
+<script>
+    function copyClipboard(){
+        var copyText = document.getElementById("input");
+
+        copyText.select();
+        copyText.setSelectionRange(0, 99999); 
+
+        navigator.clipboard.writeText(copyText.value);
+
+        alert("Copied the text: " + copyText.value);
     }
-    .passBox:hover{
-        color:black;
-    }
-</style>
+</script>
 
 <div class="align-self-lg-center">
     <h4 class="align-self-lg-center">Password Generator</h4>
 </div><br />
-<form method="post" >
-    <div class="form-group">
-        <label for="length" class="control-label">Number of Characters: </label>
-        <input type="number" id="length" require name="passwordLength" class="form-control"/><br />
 
-        <!---This is CheckBox List-->
-        @Html.CheckBoxFor(x => x.HasInteger)
-        <label>0-9   </label>
+<div class="fContainer">
+    <form method="post">
+        <div class="form-group" id="passForm">
+            <!----------- Display the result------------------->
+            <div class="resultBox">
+                <label class="control-label">Password Generated:</label><br />
+                <input class="passBox" id="input" value="@Model.PasswordResult" readonly>
+                <img class="imgSecurity" id="imgSecure" src="~/Pictures/redshield.png" asp-append-version="true" />
 
-        @Html.CheckBoxFor(x => x.HasCaptial)
-        <label>A-Z   </label>
-
-        @Html.CheckBoxFor(x => x.HasLowerCase)
-        <label>a-z   </label>
-
-        @Html.CheckBoxFor(x => x.HasSymbols)
-        @Html.EditorFor(x => x.SymbolList)
-        <label>Symbols</label>
-
-        @if(Model.HasSymbols == true && Model.SymbolList == null){
-            <script type="text/javascript">
-                alert("There is no Symbols or uncheck the symbol box");
-            </script>
-        }
-        @if(Model.LengthToLong == true){
-            <script type="text/javascript">
-                alert("The length is too long");
-            </script>
-        }
-        @if(Model.HasBoxesEmpty == true){
-            <script type="text/javascript">
-                alert("Select at least one box");
-            </script>
-        }
-        <!------------------------------------------------->
-
-            <!--This is the Submit Button-->
-            <div class="form-group">
-                <br /><button type="submit" class="btn btn-primary">GENERATE</button>
-                <button type="button" class="btn btn-secondary" asp-controller="PasswordGenerator" asp-action="CopyText" asp-route-id="@Model.PasswordResult">COPY</button>
+                <script>
+                    @if (ViewBag.PasswordIsValid == true)
+                    {
+                        <text>
+                            document.addEventListener("DOMContentLoaded", function () {
+                                const image = document.getElementById("imgSecure");
+                                image.src = "/Pictures/greenshield.jpg";
+                            });
+                        </text>
+                    }
+                </script>
             </div>
-            <!------------------------------>
-        <div class="text-center">
-            <label for="" class="control-label">Password Generated:</label>
-            <a class="passBox">@Model.PasswordResult</a>
+
+            <label for="length" class="control-label">Number of Characters: </label>
+            <input type="number" id="length" require name="passwordLength" class="form-control fInput" min="1" /><br />
+
+            <!---------This is CheckBox List----------------->
+            <input type="checkbox" id="symCheck" asp-for="HasSymbols" />
+            <input type="text" id="symList" asp-for="SymbolList" placeholder="Enter Symbols" />
+
+            <input type="checkbox" id="intCheck" asp-for="HasInteger" />
+            <label class="labCheck">0-9</label>
+
+            <input type="checkbox" id="capCheck" asp-for="HasCaptial" />
+            <label class="labCheck">A-Z</label>
+
+            <input type="checkbox" id="lowCheck" asp-for="HasLowerCase" />
+            <label class="labCheck">a-z</label>
+
+            <!-----------Alert Boxes Script-------------------->
+            @if (Model.HasSymbols == true && Model.SymbolList == null)
+            {
+                <script type="text/javascript">
+                    alert("There is no symbols typed");
+                </script>
+            }
+            @if (Model.LengthToLong == true)
+            {
+                <script type="text/javascript">
+                    alert("The length is too long");
+                </script>
+            }
+            @if (Model.HasBoxesEmpty == true)
+            {
+                <script type="text/javascript">
+                    alert("Select at least one box");
+                </script>
+            }
+
+            <!------Any error then just remove asp-controller and action from generate button and/or reset button---->
+            <div class="form-group">
+                <br /><button type="submit" class="btn btn-primary" asp-controller="PasswordGenerator" asp-action="Index">GENERATE</button>
+                <button type="button" class="btn btn-secondary" onclick="copyClipboard()" UseSubmitBehavior="false">COPY</button>
+                <button class="btn btn-secondary" asp-controller="PasswordGenerator" asp-action="resetForm">RESET</button>
+            </div>
+  
         </div>
-    </div>
-</form>
-    
+    </form>
+</div>
+
+

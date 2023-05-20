@@ -5,6 +5,22 @@
       "PackagePath": "staticwebassets\\MVCPassGenerator.bundle.scp.css"
     },
     {
+      "Id": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\Pictures\\greenshield.jpg",
+      "PackagePath": "staticwebassets\\Pictures\\greenshield.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\Pictures\\greenshield2.png",
+      "PackagePath": "staticwebassets\\Pictures\\greenshield2.png"
+    },
+    {
+      "Id": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\Pictures\\redshield.png",
+      "PackagePath": "staticwebassets\\Pictures\\redshield.png"
+    },
+    {
+      "Id": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\css\\password.css",
+      "PackagePath": "staticwebassets\\css\\password.css"
+    },
+    {
       "Id": "C:\\Users\\Unkno\\source\\repos\\MVCPassGenerator\\MVCPassGenerator\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
