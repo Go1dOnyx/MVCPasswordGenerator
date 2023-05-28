@@ -41,23 +41,24 @@
                     }
                 </script>
             </div>
-
-            <label for="length" class="control-label">Number of Characters: </label>
-            <input type="number" id="length" require name="passwordLength" class="form-control fInput" min="1" /><br />
-
+            <div class="fInputDiv" style="margin-left:1%">
+                <label for="length" class="control-label">Number of Characters: </label>
+                <input type="number" id="length" require name="passwordLength" class="fInput form-control" min="1" /><br />
+            </div>
             <!---------This is CheckBox List----------------->
-            <input type="checkbox" id="symCheck" asp-for="HasSymbols" />
-            <input type="text" id="symList" asp-for="SymbolList" placeholder="Enter Symbols" />
+            <div class="optionChecks" style="margin-left: 1%">
+                <input type="checkbox" id="symCheck" asp-for="HasSymbols" />
+                <input type="text" id="symList" asp-for="SymbolList" placeholder="Enter Symbols" />
 
-            <input type="checkbox" id="intCheck" asp-for="HasInteger" />
-            <label class="labCheck">0-9</label>
+                <input type="checkbox" id="intCheck" asp-for="HasInteger" />
+                <label class="labCheck">0-9</label>
 
-            <input type="checkbox" id="capCheck" asp-for="HasCaptial" />
-            <label class="labCheck">A-Z</label>
+                <input type="checkbox" id="capCheck" asp-for="HasCaptial" />
+                <label class="labCheck">A-Z</label>
 
-            <input type="checkbox" id="lowCheck" asp-for="HasLowerCase" />
-            <label class="labCheck">a-z</label>
-
+                <input type="checkbox" id="lowCheck" asp-for="HasLowerCase" />
+                <label class="labCheck">a-z</label>
+            </div>
             <!-----------Alert Boxes Script-------------------->
             @if (Model.HasSymbols == true && Model.SymbolList == null)
             {
@@ -84,7 +85,7 @@
                 <button type="button" class="btn btn-secondary" onclick="copyClipboard()" UseSubmitBehavior="false">COPY</button>
                 <button class="btn btn-secondary" asp-controller="PasswordGenerator" asp-action="resetForm">RESET</button>
             </div>
-  
+            
         </div>
     </form>
 </div>
